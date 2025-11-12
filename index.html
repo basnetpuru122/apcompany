@@ -1,0 +1,379 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>A.P. Enterprises — Multi Productions & Supplies</title>
+  <meta name="description" content="A.P. Enterprises Multi Productions And Supplies Company Pvt. Ltd — import, export, production, supply and manpower services from Nepal." />
+  <style>
+    :root{
+      --accent1:#ff6b6b; /* coral */
+      --accent2:#ffd166; /* warm yellow */
+      --accent3:#06d6a0; /* mint */
+      --accent4:#4d7cff; /* blue */
+      --bg:#0f1724;
+      --card:#0b1220;
+      --glass: rgba(255,255,255,0.04);
+      --muted:#9aa4b2;
+      color-scheme: dark;
+      font-family: Inter, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial;
+    }
+    *{box-sizing:border-box}
+    html,body{height:100%;margin:0;background:linear-gradient(180deg,var(--bg) 0%, #071026 100%);color:#e6eef6}
+    a{color:inherit}
+    header{
+      display:flex;align-items:center;justify-content:space-between;padding:18px 28px;backdrop-filter: blur(6px);
+      background:linear-gradient(90deg, rgba(255,255,255,0.02), rgba(255,255,255,0.015));border-bottom:1px solid rgba(255,255,255,0.03);
+    }
+    .brand{display:flex;gap:14px;align-items:center}
+    .brand img{height:56px;width:56px;object-fit:contain;border-radius:10px;background:linear-gradient(45deg,var(--accent2),var(--accent3));padding:8px}
+    .brand h1{font-size:16px;margin:0;line-height:1}
+    .brand p{margin:0;font-size:12px;color:var(--muted)}
+
+    nav{display:flex;gap:12px;align-items:center}
+    .btn{padding:8px 14px;border-radius:12px;font-weight:600;cursor:pointer;border:1px solid rgba(255,255,255,0.06);background:var(--glass)}
+    .btn.primary{background: linear-gradient(90deg,var(--accent3),var(--accent4));color:#021018;border:none}
+
+    main{max-width:1100px;margin:28px auto;padding:20px}
+
+    .hero{display:grid;grid-template-columns:1fr 420px;gap:28px;align-items:center}
+    .card{background:linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.015));padding:22px;border-radius:16px;box-shadow:0 6px 28px rgba(2,6,23,0.6);border:1px solid rgba(255,255,255,0.03)}
+    .hero h2{margin:0 0 8px;font-size:28px}
+    .hero p.lead{margin:0 0 16px;color:var(--muted)}
+
+    .services-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-top:16px}
+    .service{padding:12px;border-radius:12px;background:linear-gradient(180deg, rgba(255,255,255,0.01), rgba(255,255,255,0.02));cursor:pointer;border:1px solid rgba(255,255,255,0.02);transition:transform .18s ease, box-shadow .18s ease}
+    .service:hover{transform:translateY(-6px);box-shadow:0 8px 30px rgba(0,0,0,0.6)}
+    .service .tag{display:inline-block;padding:6px 8px;border-radius:999px;font-weight:700;font-size:12px}
+
+    .contacts{display:flex;flex-direction:column;gap:12px}
+
+    /* director/manager area */
+    .team{display:flex;gap:14px;align-items:center}
+    .avatar{width:96px;height:96px;border-radius:12px;object-fit:cover;border:3px solid rgba(255,255,255,0.04)}
+    .team .meta{min-width:0}
+    .meta h3{margin:0 0 6px;font-size:16px}
+    .meta p{margin:0;color:var(--muted);font-size:13px}
+
+    /* services detail and chooser */
+    .service-detail{margin-top:16px;padding:14px;border-radius:12px;background:linear-gradient(90deg, rgba(6,214,160,0.04), rgba(77,124,255,0.03));border:1px solid rgba(255,255,255,0.02)}
+    .service-detail h4{margin:0 0 8px}
+    .service-detail ul{margin:8px 0 0;padding-left:18px;color:var(--muted)}
+
+    footer{margin:28px auto 60px;max-width:1100px;padding:20px;border-radius:12px;background:linear-gradient(180deg, rgba(255,255,255,0.01), rgba(255,255,255,0.02));display:flex;gap:18px;align-items:center;justify-content:space-between}
+    .contact-links{display:flex;gap:12px;align-items:center}
+
+    /* responsive */
+    @media (max-width:980px){
+      .hero{grid-template-columns:1fr}
+      .services-grid{grid-template-columns:repeat(2,1fr)}
+      header{padding:12px}
+    }
+    @media (max-width:560px){
+      .services-grid{grid-template-columns:1fr}
+      .brand img{height:46px;width:46px}
+    }
+
+    /* small utility */
+    .muted{color:var(--muted)}
+    .chip{display:inline-block;background:rgba(255,255,255,0.03);padding:6px 10px;border-radius:999px;font-size:13px}
+    .map-embed{width:100%;height:220px;border-radius:8px;border:0}
+
+    /* simple animated underline for nav */
+    .nav-underline{height:3px;background:linear-gradient(90deg,var(--accent1),var(--accent4));width:40px;border-radius:999px;margin-top:6px}
+
+  </style>
+</head>
+<body>
+  <header>
+    <div class="brand">
+      <img src="aplogo.png" alt="A.P. Enterprises logo" />
+      <div>
+        <h1>A.P. Enterprises</h1>
+        <p class="muted">Multi Productions And Supplies Company Pvt. Ltd — Kathmandu, Nepal</p>
+      </div>
+    </div>
+    <nav>
+      <a class="btn" href="#services">Services</a>
+      <a class="btn" href="#team">Team</a>
+      <a class="btn" href="#contact">Contact</a>
+      <a class="btn primary" href="#contact">Get in touch</a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="card">
+        <h2>We connect Nepal to the world — import, export, produce & supply</h2>
+        <p class="lead">A.P. Enterprises operates across multiple sectors to import quality goods, export Nepali specialties, run production lines and provide manpower & supplies for projects of any scale.</p>
+
+        <div id="services" class="services">
+          <div class="services-grid" id="servicesGrid">
+            <!-- service items populated by JS -->
+          </div>
+
+          <div class="service-detail" id="serviceDetail">
+            <h4>Select a service to view details</h4>
+            <p class="muted">Click any service above to read the description and quick action options.</p>
+          </div>
+        </div>
+
+        <div style="margin-top:18px;display:flex;gap:12px;align-items:center">
+          <a href="#contact" class="btn primary">Contact Sales</a>
+          <button class="btn" onclick="downloadVCard()">Download Contact</button>
+        </div>
+      </div>
+
+      <aside class="card contacts">
+        <div style="display:flex;justify-content:space-between;align-items:center">
+          <div>
+            <h3 style="margin:0">A.P. Enterprises</h3>
+            <p class="muted" style="margin:6px 0 0">Kathmandu-32, Kathmandu Nepal</p>
+          </div>
+          <div style="text-align:right">
+            <p class="chip">Multi-sector</p>
+          </div>
+        </div>
+
+        <div style="border-top:1px dashed rgba(255,255,255,0.03);padding-top:12px">
+          <h4 style="margin:0 0 8px">Quick Contact</h4>
+          <p class="muted" style="margin:0">Phone: <a href="tel:+9779847257010">+977 9847257010</a></p>
+          <p class="muted" style="margin:0">Email: <a href="mailto:info@apcomapny.com">info@apcomapny.com</a></p>
+          <p class="muted" style="margin:6px 0 0">Location: <a href="https://maps.app.goo.gl/xUTwym6arP76jwi79" target="_blank" rel="noopener">Open map</a></p>
+        </div>
+
+        <div style="border-top:1px dashed rgba(255,255,255,0.03);padding-top:12px">
+          <h4 style="margin:0 0 8px">Directors</h4>
+          <div class="team">
+            <img src="pb.JPG" alt="Purushottam Basnet" class="avatar"/>
+            <div class="meta">
+              <h3>Purushottam Basnet</h3>
+              <p class="muted">Director<br/>Email: <a href="mailto:basnetpuru99@gmail.com">basnetpuru99@gmail.com</a><br/>Mob: <a href="tel:+9779842957179">+977 9842957179</a></p>
+            </div>
+          </div>
+
+          <div style="height:8px"></div>
+
+          <div class="team">
+            <img src="ambir.JPG" alt="Ambir Basnet" class="avatar"/>
+            <div class="meta">
+              <h3>Ambir Basnet</h3>
+              <p class="muted">Manager<br/>Email: <a href="mailto:basnetambir96@gmail.com">basnetambir96@gmail.com</a><br/>Mob: <a href="tel:+9779860504996">+977 9860504996</a></p>
+            </div>
+          </div>
+        </div>
+
+      </aside>
+    </section>
+
+    <section style="margin-top:18px" class="card">
+      <h3>About the company</h3>
+      <p class="muted">Name: A.P. Enterprises Multi Productions And Supplies Company Pvt. Ltd<br>Role: Work in multi sectors<br>Services: Import, Export, Collection, Production, Supplies, Manpower</p>
+
+      <h4 style="margin-top:10px">Export categories (examples)</h4>
+      <ul class="muted">
+        <li>Nepali papers, handicrafts, carpets, wool, hemp products, herbs & spices, honey, teas, coffees, dried fruits</li>
+        <li>Agricultural produce and local processed goods</li>
+      </ul>
+
+      <h4 style="margin-top:10px">Import categories (examples)</h4>
+      <ul class="muted">
+        <li>Medical equipment & supplies, electronics, construction materials, machinery & spare parts, garments, beauty products and more</li>
+      </ul>
+    </section>
+
+    <section id="contact" style="margin-top:18px" class="card">
+      <h3>Get in touch</h3>
+      <div style="display:grid;grid-template-columns:1fr 320px;gap:18px;align-items:start">
+        <div>
+          <form id="contactForm" onsubmit="handleContact(event)">
+            <div style="display:flex;gap:8px;margin-bottom:8px">
+              <input required name="name" placeholder="Your name" style="flex:1;padding:10px;border-radius:8px;border:1px solid rgba(255,255,255,0.03);background:transparent;color:inherit" />
+              <input required name="email" type="email" placeholder="Email" style="width:220px;padding:10px;border-radius:8px;border:1px solid rgba(255,255,255,0.03);background:transparent;color:inherit" />
+            </div>
+            <select name="service" style="width:100%;padding:10px;border-radius:8px;border:1px solid rgba(255,255,255,0.03);background:transparent;color:inherit">
+              <option value="Import">Import</option>
+              <option value="Export">Export</option>
+              <option value="Collection">Collection</option>
+              <option value="Production">Production</option>
+              <option value="Supplies">Supplies</option>
+              <option value="Manpower">Manpower</option>
+            </select>
+            <div style="margin-top:8px">
+              <textarea required name="message" rows="4" placeholder="Brief message / inquiry" style="width:100%;padding:10px;border-radius:8px;border:1px solid rgba(255,255,255,0.03);background:transparent;color:inherit"></textarea>
+            </div>
+            <div style="margin-top:8px;display:flex;gap:8px;align-items:center">
+              <button class="btn primary" type="submit">Send Message</button>
+              <div class="muted">Or email <a href="mailto:info@apcomapny.com">info@apcomapny.com</a></div>
+            </div>
+          </form>
+        </div>
+
+        <aside>
+          <h4 class="muted" style="margin-top:0">Location</h4>
+          <iframe class="map-embed" src="https://www.google.com/maps?q=Kathmandu-32,+Nepal&output=embed" aria-hidden="false"></iframe>
+
+          <div style="margin-top:12px">
+            <h4 class="muted" style="margin:0">Phone</h4>
+            <p style="margin:6px 0 0"><a href="tel:+9779847257010">+977 9847257010</a></p>
+            <h4 class="muted" style="margin:8px 0 0">Email</h4>
+            <p style="margin:6px 0 0"><a href="mailto:info@apcomapny.com">info@apcomapny.com</a></p>
+          </div>
+        </aside>
+      </div>
+    </section>
+
+  </main>
+
+  <footer>
+    <div>
+      <strong>A.P. Enterprises</strong>
+      <div class="muted">Kathmandu-32, Kathmandu Nepal</div>
+    </div>
+    <div class="contact-links">
+      <a class="muted" href="mailto:info@apcomapny.com">info@apcomapny.com</a>
+      <span class="muted">|</span>
+      <a class="muted" href="tel:+9779847257010">+977 9847257010</a>
+    </div>
+  </footer>
+
+  <script>
+    const services = [
+      {
+        id:'Import',
+        title:'Import',
+        tag:'Goods & equipment',
+        color:'var(--accent4)',
+        bullets:[
+          'Electronic materials, medicines & medical equipment, health supplies',
+          'Paper, stationery & printing materials',
+          'Construction materials, pipes, wires, meshes and machinery parts',
+          'Clothing, beauty products, yarn and agricultural machinery'
+        ]
+      },
+      {
+        id:'Export',
+        title:'Export',
+        tag:'Nepali specialties',
+        color:'var(--accent3)',
+        bullets:[
+          'Lokta (Daphne) paper, handicrafts, woodwork & sculptures',
+          'Agricultural goods like honey, tea, coffee, spices, dried fruits',
+          'Herbs & medicinal products (chiraito, jatamsi, titepati)',
+          'Candles, oils, Nepali fabrics and other local products'
+        ]
+      },
+      {
+        id:'Collection',
+        title:'Collection',
+        tag:'Sourcing & aggregation',
+        color:'var(--accent2)',
+        bullets:[
+          'Collection & aggregation of raw materials and agricultural produce',
+          'Sorting, quality control and packaging for domestic sale or export'
+        ]
+      },
+      {
+        id:'Production',
+        title:'Production',
+        tag:'Manufacturing',
+        color:'var(--accent1)',
+        bullets:[
+          'Operate production lines for Nepali paper, hemp & flax fabrics',
+          'Oil & candle production from local seeds',
+          'Beekeeping and honey processing operations'
+        ]
+      },
+      {
+        id:'Supplies',
+        title:'Supplies',
+        tag:'Project execution',
+        color:'linear-gradient(90deg,var(--accent3),var(--accent4))',
+        bullets:[
+          'Tender-based supplies for government and private sector projects',
+          'Complete supply-chain management for construction and manufacturing projects'
+        ]
+      },
+      {
+        id:'Manpower',
+        title:'Manpower',
+        tag:'Skilled workforce',
+        color:'linear-gradient(90deg,var(--accent4),var(--accent1))',
+        bullets:[
+          'Skilled people for production, logistics, project execution and field work',
+          'Recruitment and deployment for short-term and long-term contracts'
+        ]
+      }
+    ];
+
+    const grid = document.getElementById('servicesGrid');
+    const detail = document.getElementById('serviceDetail');
+
+    function makeServiceCard(s){
+      const el = document.createElement('div');
+      el.className='service';
+      el.innerHTML = `
+        <div style="display:flex;justify-content:space-between;align-items:center">
+          <strong>${s.title}</strong>
+          <span class="tag" style="background:linear-gradient(90deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));">${s.tag}</span>
+        </div>
+        <p class="muted" style="margin-top:8px;font-size:13px">${s.bullets[0]}</p>
+      `;
+      el.addEventListener('click',()=>showDetail(s));
+      return el;
+    }
+
+    function showDetail(s){
+      detail.innerHTML = `
+        <h4>${s.title}</h4>
+        <p class="muted">${s.tag}</p>
+        <ul class="muted">${s.bullets.map(b=>`<li>${b}</li>`).join('')}</ul>
+        <div style="margin-top:12px;display:flex;gap:8px">
+          <a class="btn primary" href="mailto:info@apcomapny.com?subject=${encodeURIComponent(s.title + ' enquiry')}">Enquire</a>
+          <button class="btn" onclick="quickQuote('${s.title}')">Request Quote</button>
+        </div>
+      `;
+    }
+
+    services.forEach(s=>grid.appendChild(makeServiceCard(s)));
+
+    // default show
+    showDetail(services[0]);
+
+    function quickQuote(service){
+      const name = prompt('Your name (for quote)');
+      if(!name) return alert('Quote cancelled');
+      const phone = prompt('Phone number');
+      const message = `Quote request from ${name} (${phone || 'no phone provided'}) for service: ${service}`;
+      // in real site you'd send this to server. For this static demo we just open mailto
+      location.href = `mailto:info@apcomapny.com?subject=${encodeURIComponent('Quick Quote: '+service)}&body=${encodeURIComponent(message)}`;
+    }
+
+    function handleContact(e){
+      e.preventDefault();
+      const form = e.target;
+      const data = new FormData(form);
+      // For static file we'll just open mail client with filled info
+      const subject = `Website contact: ${data.get('service')}`;
+      const body = `Name: ${data.get('name')}\nEmail: ${data.get('email')}\nService: ${data.get('service')}\nMessage: ${data.get('message')}`;
+      location.href = `mailto:info@apcomapny.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+    }
+
+    function downloadVCard(){
+      const vcard = `BEGIN:VCARD\nVERSION:3.0\nFN:Purushottam Basnet\nORG:A.P. Enterprises Multi Productions And Supplies Company Pvt. Ltd\nTEL;TYPE=CELL:+9779842957179\nEMAIL:basnetpuru99@gmail.com\nEND:VCARD`;
+      const blob = new Blob([vcard],{type:'text/vcard'});
+      const url = URL.createObjectURL(blob);
+      const a = document.createElement('a');
+      a.href = url; a.download = 'PurushottamBasnet.vcf'; a.click();
+      URL.revokeObjectURL(url);
+    }
+
+    // small accessibility: keyboard selection
+    document.addEventListener('keydown', (e)=>{
+      if(e.key === 's'){
+        document.querySelector('[href="#services"]').scrollIntoView({behavior:'smooth'});
+      }
+    });
+  </script>
+</body>
+</html>
